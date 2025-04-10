@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jednoduchý LLM</title>
+</head>
+<body>
+    <h1>Generování textu pomocí LLM</h1>
+    <form method="POST">
+        <label for="start_sequence">Počáteční sekvence pro generování:</label><br>
+        <input type="text" id="start_sequence" name="start_sequence" size="50"><br><br>
+
+        <label for="new_text">Text pro dotrénování modelu (nepovinné):</label><br>
+        <textarea id="new_text" name="new_text" rows="5" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Generovat">
+    </form>
+
+    {% if generated_text %}
+    <h2>Generovaný text:</h2>
+    <p>{{ generated_text }}</p>
+    {% endif %}
+</body>
+</html>
